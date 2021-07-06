@@ -282,3 +282,69 @@ inputName:{
     padding: 5
   }
 ```
+Troisiéme exemple :
+
+Dans cet exemple, nous allons voir comment utiliser des liste, les components et les props.
+
+Pour ce faire il faut : 
+
+- Crée un dossier "components" dans lequel vous devez crée un fichier "Listing.js"
+
+Tout d'abord aller sur App.js
+
+```
+  const [people,setPeople] = useState([
+    {name:"armand" , id:1},
+    {name:"Bobby" , id:2},
+    {name:"Jack" , id:3},
+    {name:"Ron" , id:4},
+    {name:"Agath" , id:5},
+    {name:"luc" , id:6},
+    {name:"jhon" , id:7},
+    {name:"jonny" , id:8},
+    {name:"zezea" , id:9},
+    {name:"armand" , id:10},
+  ])
+
+  return (
+    <View style={styles.container}>
+      // Ici nous passons la liste à un props appelé "people" il sera réutilisable dans notre component crée dans Listing.js
+     <Listing people={people}/>     
+    </View>
+  );
+}
+```
+
+Ensuite Listing.js
+
+```
+import React,{useState} from 'react';
+import { StyleSheet, Text, View , Button , TextInput,ScrollView } from 'react-native';
+// people est le props reçu par App.js 
+const Listing = ({people}) => {
+    return (
+        <View>
+            <ScrollView>
+                // On accede à chaque element de notre list à l'aide de map
+                {people.map((item,index) =>{
+                    return (
+                        <View key={item.id}>
+                            <Text style={styles.itemPeople}>{item.name}</Text>
+                        </View>
+                        )
+                })}
+            </ScrollView>
+        </View>
+    );
+};
+
+const styles = StyleSheet.create({
+    itemPeople:{
+        fontSize:96,
+        marginTop:24,
+        backgroundColor: "#FEAF"
+    }})
+export default Listing;
+
+```
+
