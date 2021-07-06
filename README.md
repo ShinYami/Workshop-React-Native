@@ -229,10 +229,22 @@ Afin de pouvoir changer nos state à partir d'un input, nous avons besoin de fon
 
 ```javascript
 const handleInputLetter = (name) => {
-  setName(name);
+  let regex = /^[a-zA-Z ._-]*$/;
+    if(regex.test(name))
+    {
+      setName(name)
+    }else{
+      console.log("only letter")
+    }
 };
 const handleInputAge = (age) => {
-  setAge(age);
+      let regex = /^[0-9\b]+$/;
+    if(regex.test(age))
+    {
+      setAge(age)
+    }else{
+      console.log("error enter a number for your age")
+    }
 };
 return (
   <View style={styles.container}>
