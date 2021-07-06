@@ -59,7 +59,7 @@ une fois l'installation de votre version fini, lancer le virtual devise, connect
 
 ### Exercices :
 
-Avant de commencer à développer notre premier application , commençons par quelques exercices.
+Avant de commencer à développer notre première application , commençons par quelques exercices.
 Tout d'abord, après avoir créé votre projet, aller sur le fichier "App.js".
 
 ```javascript
@@ -236,21 +236,19 @@ Afin de pouvoir changer nos state à partir d'un input, nous avons besoin de fon
 ```javascript
 const handleInputLetter = (name) => {
   let regex = /^[a-zA-Z ._-]*$/;
-    if(regex.test(name))
-    {
-      setName(name)
-    }else{
-      console.log("only letter")
-    }
+  if (regex.test(name)) {
+    setName(name);
+  } else {
+    console.log("only letter");
+  }
 };
 const handleInputAge = (age) => {
-      let regex = /^[0-9\b]+$/;
-    if(regex.test(age))
-    {
-      setAge(age)
-    }else{
-      console.log("error enter a number for your age")
-    }
+  let regex = /^[0-9\b]+$/;
+  if (regex.test(age)) {
+    setAge(age);
+  } else {
+    console.log("error enter a number for your age");
+  }
 };
 return (
   <View style={styles.container}>
@@ -288,17 +286,18 @@ inputName:{
     padding: 5
   }
 ```
-Troisiéme exemple :
 
-Dans cet exemple, nous allons voir comment utiliser des liste, les components et les props.
+Troisième exemple :
 
-Pour ce faire il faut : 
+Dans cet exemple, nous allons voir comment utiliser des listes, les components et les props.
 
-- Crée un dossier "components" dans lequel vous devez crée un fichier "Listing.js"
+Pour ce faire, il faut :
+
+- Créer un dossier "components" dans lequel vous devez créer un fichier "Listing.js"
 
 Tout d'abord aller sur App.js
 
-```
+```javascript
   const [people,setPeople] = useState([
     {name:"armand" , id:1},
     {name:"Bobby" , id:2},
@@ -315,7 +314,7 @@ Tout d'abord aller sur App.js
   return (
     <View style={styles.container}>
       // Ici nous passons la liste à un props appelé "people" il sera réutilisable dans notre component crée dans Listing.js
-     <Listing people={people}/>     
+     <Listing people={people}/>
     </View>
   );
 }
@@ -323,36 +322,44 @@ Tout d'abord aller sur App.js
 
 Ensuite Listing.js
 
-```
-import React,{useState} from 'react';
-import { StyleSheet, Text, View , Button , TextInput,ScrollView } from 'react-native';
-// people est le props reçu par App.js 
-const Listing = ({people}) => {
-    return (
-        <View>
-            <ScrollView>
-                // On accede à chaque element de notre list à l'aide de map
-                {people.map((item,index) =>{
-                    return (
-                        <View key={item.id}>
-                            <Text style={styles.itemPeople}>{item.name}</Text>
-                        </View>
-                        )
-                })}
-            </ScrollView>
-        </View>
-    );
+```javascript
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  TextInput,
+  ScrollView,
+} from "react-native";
+// people est le props reçu par App.js
+const Listing = ({ people }) => {
+  return (
+    <View>
+      <ScrollView>
+        // On accede à chaque element de notre list à l'aide de map
+        {people.map((item, index) => {
+          return (
+            <View key={item.id}>
+              <Text style={styles.itemPeople}>{item.name}</Text>
+            </View>
+          );
+        })}
+      </ScrollView>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
-    itemPeople:{
-        fontSize:96,
-        marginTop:24,
-        backgroundColor: "#FEAF"
-    }})
+  itemPeople: {
+    fontSize: 96,
+    marginTop: 24,
+    backgroundColor: "#FEAF",
+  },
+});
 export default Listing;
-
 ```
+<<<<<<< HEAD
 
 exercice final : Il faut crée une list et faire en sort de pouvoir supprimer les elements de cet liste un à un..
 
@@ -360,3 +367,5 @@ Resultat :
 
 ![exercice3](img/exercice3.png)
 
+=======
+>>>>>>> aa1809665f6141dc25e2b77cbef4090037d52342
