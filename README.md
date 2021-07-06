@@ -23,3 +23,34 @@ Rappel : Avant de commencer react NATIVE, il faut impérativement avoir des bonn
 4. EXPO sur mobile.
 
 ### Installation
+
+ce rendre sur le site : [expo](https://docs.expo.io/)
+
+Expo sur desktop : 
+
+1) Ce rendre sur votre cmd : ```npm install -g expo-cli –global```
+
+2) Une fois l'installation expo fini ce rendre dans le directory de votre projet à l'aide du terminal : ```expo init nom-projet```
+
+3) lancer l'application : ```expo start``` 
+
+Expo sur mobile :
+
+Afin de pouvoir voir les resultats sur notre smartphone.
+
+1) Ce rendre sur l'app store / play store installer expo.
+2) Scaner le QRCODE apres avoir lancer expo start.
+
+Alternative android studio (emulateur) :
+
+ce rendre sur le site : [android](https://developer.android.com/studio)
+
+Une fois l'installation réalisée :
+
+1) Cliqué sur "Configure" sélectionné AVD manager
+2) Crée un virtuel device
+3) Category "phone" -> choisir un smartphone
+4) Appuyer sur "next"
+5) Choisir la version Android "Pie"
+
+une fois l'installation de votre version fini lancer le virtuel devise, connectez-vous à votre compte google et installation expo voir étape au-dessus 
