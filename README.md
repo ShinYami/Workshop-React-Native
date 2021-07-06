@@ -55,4 +55,131 @@ Une fois l'installation réalisée :
 4) Appuyer sur "next"
 5) Choisir la version Android "Pie"
 
-une fois l'installation de votre version fini lancer le virtuel devise, connectez-vous à votre compte google et installation expo voir étape au-dessus 
+une fois l'installation de votre version fini lancer le virtuel devise, connectez-vous à votre compte google et installation expo voir étape au-dessus.
+
+### Exercices :
+ 
+Avant de commencer à développer notre premier application , commençon par quelque exercices.
+Tout d'abord, après avoir crée votre projet aller sur le fichier "App.js".
+
+```
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+```
+Ce code correspond au code pardéfaut de notre application il affiche simplement ce qu'il y a dans ``` <Text>Open up App.js to start working on your app!</Text> ```
+
+Premier exemple :
+
+Dans cet exercice nous allons voir comment utiliser les components de react Native ainsi que des hooks (useState).
+
+Tout d'abord, nous allons avoir besoin de crée 2 useState.
+
+```
+import React,{useState} from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+   
+   // definis les useState
+  const [name,setName] = useState("Jhon");
+  const [person ,setPerson] = useState({name: 'mario', age:40});
+
+  return (
+    <View style={styles.container}>
+      // Afficher nos data ici 
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+```
+
+Ensuite pour afficher les données passé à nos useState.
+
+```
+import React,{useState} from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  const [name,setName] = useState("Jhon");
+  const [person ,setPerson] = useState({name: 'mario', age:40});
+
+  return (
+    <View style={styles.container}>
+      <Text>My name is {name}</Text>
+      <Text>His name is {person.name} his age {person.age}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
+```
+
+Jusqu'a present nous avons appris comment utiliser useState et afficher les donnée. Maintenant si nous voulons modifier une valeur que l'on passer à ceux-ci.
+
+```
+import React,{useState} from 'react';
+import { StyleSheet, Text, View , Button } from 'react-native';
+
+export default function App() {
+  const [name,setName] = useState("Jhon");
+  const [person ,setPerson] = useState({name: 'mario', age:40});
+
+  const clickHandler = () => {
+    setName("Ronny")
+  }
+  return (
+    <View style={styles.container}>
+      <Text>My name is {name}</Text>
+      <Text>His name is {person.name} his age {person.age}</Text>
+      <View>
+        <Button title="update name" onPress={clickHandler}></Button>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
+```
