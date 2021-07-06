@@ -24,48 +24,48 @@ Rappel : Avant de commencer react NATIVE, il faut impérativement avoir des bonn
 
 ### Installation
 
-ce rendre sur le site : [expo](https://docs.expo.io/)
+Se rendre sur le site : [expo](https://docs.expo.io/)
 
-Expo sur desktop : 
+Expo sur desktop :
 
-1) Ce rendre sur votre cmd : ```npm install -g expo-cli –global```
+1. Se rendre sur votre cmd : `npm install -g expo-cli –global`
 
-2) Une fois l'installation expo fini ce rendre dans le directory de votre projet à l'aide du terminal : ```expo init nom-projet```
+2. Une fois l'installation expo fini, se rendre dans le directory de votre projet à l'aide du terminal : `expo init nom-projet`
 
-3) choisir un template : ici pour nos exercice et application on choisira "blank" enter 
+3. Choisir un template : ici pour nos exercices et application on choisira "blank" enter
 
-4) lancer l'application : ```expo start``` 
+4. Lancer l'application : `expo start`
 
 Expo sur mobile :
 
-Afin de pouvoir voir les resultats sur notre smartphone.
+Afin de voir les resultats sur notre smartphone.
 
-1) Ce rendre sur l'app store / play store installer expo.
-2) Scaner le QRCODE apres avoir lancer expo start.
+1. Se rendre sur l'app store / play store installer expo.
+2. Scanner le QRCODE apres avoir lancer expo start.
 
-Alternative android studio (emulateur) :
+Alternative android studio (émulateur) :
 
 ce rendre sur le site : [android](https://developer.android.com/studio)
 
 Une fois l'installation réalisée :
 
-1) Cliqué sur "Configure" sélectionné AVD manager
-2) Crée un virtuel device
-3) Category "phone" -> choisir un smartphone
-4) Appuyer sur "next"
-5) Choisir la version Android "Pie"
+1. Cliquer sur "Configure" sélectionner AVD manager
+2. Créer un virtuel device
+3. Category "phone" -> choisir un smartphone
+4. Appuyer sur "next"
+5. Choisir la version Android "Pie"
 
-une fois l'installation de votre version fini lancer le virtuel devise, connectez-vous à votre compte google et installation expo voir étape au-dessus.
+une fois l'installation de votre version fini, lancer le virtual devise, connectez-vous à votre compte google et installation expo voir étape au-dessus.
 
 ### Exercices :
- 
-Avant de commencer à développer notre premier application , commençon par quelque exercices.
-Tout d'abord, après avoir crée votre projet aller sur le fichier "App.js".
 
-```
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+Avant de commencer à développer notre premier application , commençons par quelques exercices.
+Tout d'abord, après avoir créé votre projet, aller sur le fichier "App.js".
+
+```javascript
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
@@ -79,61 +79,59 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 ```
-Ce code correspond au code pardéfaut de notre application il affiche simplement ce qu'il y a dans ``` <Text>Open up App.js to start working on your app!</Text> ```
+
+Ce code correspond au code par défaut de notre application. Il affiche simplement ce qu'il y a dans `<Text>Open up App.js to start working on your app!</Text>`
 
 Premier exemple :
 
-Dans cet exercice nous allons voir comment utiliser les components de react Native ainsi que des hooks (useState).
+Dans cet exercice, nous allons voir comment utiliser les components de react Native ainsi que des hooks (useState).
 
-Tout d'abord, nous allons avoir besoin de crée 2 useState.
+Tout d'abord, nous allons avoir besoin de créer 2 useState.
 
-```
-import React,{useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+```javascript
+import React, { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
-   
-   // definis les useState
-  const [name,setName] = useState("Jhon");
-  const [person ,setPerson] = useState({name: 'mario', age:40});
+  // definir les useState
+  const [name, setName] = useState("Jhon");
+  const [person, setPerson] = useState({ name: "mario", age: 40 });
 
-  return (
-    <View style={styles.container}>
-      // Afficher nos data ici 
-    </View>
-  );
+  return <View style={styles.container}>// Afficher nos data ici</View>;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 ```
 
-Ensuite pour afficher les données passé à nos useState.
+Ensuite pour afficher les données passées à nos useState.
 
-```
-import React,{useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+```javascript
+import React, { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
-  const [name,setName] = useState("Jhon");
-  const [person ,setPerson] = useState({name: 'mario', age:40});
+  const [name, setName] = useState("Jhon");
+  const [person, setPerson] = useState({ name: "mario", age: 40 });
 
   return (
     <View style={styles.container}>
       <Text>My name is {name}</Text>
-      <Text>His name is {person.name} his age {person.age}</Text>
+      <Text>
+        His name is {person.name} his age {person.age}
+      </Text>
     </View>
   );
 }
@@ -141,31 +139,32 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
-
 ```
 
-Jusqu'a present nous avons appris comment utiliser useState et afficher les donnée. Maintenant si nous voulons modifier une valeur que l'on passer à ceux-ci.
+Jusqu'a présent, nous avons appris comment utiliser useState et afficher les données. Maintenant, si nous voulons modifier une valeur que l'on passe à ceux-ci.
 
-```
-import React,{useState} from 'react';
-import { StyleSheet, Text, View , Button } from 'react-native';
+```javascript
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function App() {
-  const [name,setName] = useState("Jhon");
-  const [person ,setPerson] = useState({name: 'mario', age:40});
+  const [name, setName] = useState("Jhon");
+  const [person, setPerson] = useState({ name: "mario", age: 40 });
 
   const clickHandler = () => {
-    setName("Ronny")
-  }
+    setName("Ronny");
+  };
   return (
     <View style={styles.container}>
       <Text>My name is {name}</Text>
-      <Text>His name is {person.name} his age {person.age}</Text>
+      <Text>
+        His name is {person.name} his age {person.age}
+      </Text>
       <View>
         <Button title="update name" onPress={clickHandler}></Button>
       </View>
@@ -176,36 +175,32 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
-
 ```
-Deuxieme exemple : 
+
+Deuxieme exemple :
 
 Dans cet exemple nous allons voir comment passer et changer le state d'une variable en utilisant des input.
 
-```
-import React,{useState} from 'react';
-import { StyleSheet, Text, View , Button , TextInput } from 'react-native';
+```javascript
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Button, TextInput } from "react-native";
 
 export default function App() {
-  const [name,setName] = useState("Jhon");
-  const [age,setAge] = useState("23")
+  const [name, setName] = useState("Jhon");
+  const [age, setAge] = useState("23");
 
   return (
     <View style={styles.container}>
       <Text>Enter your name : </Text>
-      <TextInput
-      style={styles.inputName}
-      placeholder="name..."></TextInput>
+      <TextInput style={styles.inputName} placeholder="name..."></TextInput>
 
       <Text>Enter your age : </Text>
-      <TextInput
-      style={styles.inputAge}
-      placeholder="age..."></TextInput>
+      <TextInput style={styles.inputAge} placeholder="age..."></TextInput>
     </View>
   );
 }
@@ -213,54 +208,57 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
-  inputName:{
-    borderWidth: 4 ,
-    borderColor : "#000",
-    padding: 5
+  inputName: {
+    borderWidth: 4,
+    borderColor: "#000",
+    padding: 5,
   },
-  inputAge:{
-    borderWidth: 4 ,
-    borderColor : "#000",
-    padding: 5
-  }
+  inputAge: {
+    borderWidth: 4,
+    borderColor: "#000",
+    padding: 5,
+  },
 });
 ```
 
-Afin de pouvoir change nos state à partir d'un input nous avons besoin de fonction et de la propriété onChangeText sur nos Input.
+Afin de pouvoir changer nos state à partir d'un input, nous avons besoin de fonctions et de la propriété onChangeText sur nos Inputs.
 
-```
-  const handleInputLetter = (name) => {
-    setName(name)
-  }
-  const handleInputAge = (age) => {
-    setAge(age)
-  }
-   return (
-    <View style={styles.container}>
-      <Text>Enter your name : </Text>
-      <TextInput
+```javascript
+const handleInputLetter = (name) => {
+  setName(name);
+};
+const handleInputAge = (age) => {
+  setAge(age);
+};
+return (
+  <View style={styles.container}>
+    <Text>Enter your name : </Text>
+    <TextInput
       style={styles.inputName}
       placeholder="name..."
-      onChangeText={handleInputLetter}></TextInput>
+      onChangeText={handleInputLetter}
+    ></TextInput>
 
-      <Text>Enter your age : </Text>
-      <TextInput
+    <Text>Enter your age : </Text>
+    <TextInput
       style={styles.inputAge}
       placeholder="age..."
-      onChangeText={handleInputAge}>
-      </TextInput>
-      <Text>Name: {name} - age:{age}</Text>
-    </View>
-  );
+      onChangeText={handleInputAge}
+    ></TextInput>
+    <Text>
+      Name: {name} - age:{age}
+    </Text>
+  </View>
+);
 ```
 
-CSS pour les inputs 
+CSS pour les inputs
 
-```
+```javascript
 inputName:{
     borderWidth: 4 ,
     borderColor : "#000",
