@@ -183,3 +183,92 @@ const styles = StyleSheet.create({
 });
 
 ```
+Deuxieme exemple : 
+
+Dans cet exemple nous allons voir comment passer et changer le state d'une variable en utilisant des input.
+
+```
+import React,{useState} from 'react';
+import { StyleSheet, Text, View , Button , TextInput } from 'react-native';
+
+export default function App() {
+  const [name,setName] = useState("Jhon");
+  const [age,setAge] = useState("23")
+
+  return (
+    <View style={styles.container}>
+      <Text>Enter your name : </Text>
+      <TextInput
+      style={styles.inputName}
+      placeholder="name..."></TextInput>
+
+      <Text>Enter your age : </Text>
+      <TextInput
+      style={styles.inputAge}
+      placeholder="age..."></TextInput>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputName:{
+    borderWidth: 4 ,
+    borderColor : "#000",
+    padding: 5
+  },
+  inputAge:{
+    borderWidth: 4 ,
+    borderColor : "#000",
+    padding: 5
+  }
+});
+```
+
+Afin de pouvoir change nos state à partir d'un input nous avons besoin de fonction et de la propriété onChangeText sur nos Input.
+
+```
+  const handleInputLetter = (name) => {
+    setName(name)
+  }
+  const handleInputAge = (age) => {
+    setAge(age)
+  }
+   return (
+    <View style={styles.container}>
+      <Text>Enter your name : </Text>
+      <TextInput
+      style={styles.inputName}
+      placeholder="name..."
+      onChangeText={handleInputLetter}></TextInput>
+
+      <Text>Enter your age : </Text>
+      <TextInput
+      style={styles.inputAge}
+      placeholder="age..."
+      onChangeText={handleInputAge}>
+      </TextInput>
+      <Text>Name: {name} - age:{age}</Text>
+    </View>
+  );
+```
+
+CSS pour les inputs 
+
+```
+inputName:{
+    borderWidth: 4 ,
+    borderColor : "#000",
+    padding: 5
+  },
+  inputAge:{
+    borderWidth: 4 ,
+    borderColor : "#000",
+    padding: 5
+  }
+```
