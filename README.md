@@ -359,3 +359,10 @@ const styles = StyleSheet.create({
 });
 export default Listing;
 ```
+
+exercice final : Il faut crée une list et faire en sort de pouvoir supprimer les elements de cet liste un à un..
+
+Resultat : 
+
+![exercice3](img/exercice3.png)
+
