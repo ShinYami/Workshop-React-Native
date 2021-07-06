@@ -181,6 +181,12 @@ const styles = StyleSheet.create({
   },
 });
 ```
+exercice counter : 
+
+- crée un compteur en utilisant les useState vue juste avant et incrementer sa valeur a chaque click du button.
+
+![exercice1](img/exercice1.png)
+
 
 Deuxieme exemple :
 
@@ -347,4 +353,10 @@ const styles = StyleSheet.create({
 export default Listing;
 
 ```
+
+exercice final : Il faut crée une list et faire en sort de pouvoir supprimer les elements de cet liste un à un..
+
+Resultat : 
+
+![exercice3](img/exercice3.png)
 
