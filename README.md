@@ -32,7 +32,9 @@ Expo sur desktop :
 
 2) Une fois l'installation expo fini ce rendre dans le directory de votre projet à l'aide du terminal : ```expo init nom-projet```
 
-3) lancer l'application : ```expo start``` 
+3) choisir un template : ici pour nos exercice et application on choisira "blank" enter 
+
+4) lancer l'application : ```expo start``` 
 
 Expo sur mobile :
 
