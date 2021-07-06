@@ -45,7 +45,7 @@ Afin de voir les resultats sur notre smartphone.
 
 Alternative android studio (émulateur) :
 
-ce rendre sur le site : [android](https://developer.android.com/studio)
+Se rendre sur le site : [android](https://developer.android.com/studio)
 
 Une fois l'installation réalisée :
 
