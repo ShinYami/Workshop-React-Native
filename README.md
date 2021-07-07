@@ -13,7 +13,7 @@
 Qu’est ce que react NATIVE ?
 
 React NATIVE est un FrameWork open source qui permet de créer des applications mobile android/ios grâce à React. Il utilise des api javascript pour notre interface utilisateur à l’aide de composants react (« composant react est un block de code réutilisable ») prêt à l’emploi, créer ses propres components.
-Rappel : Avant de commencer react NATIVE, il faut impérativement avoir des bonne notions en react, càd props , hooks , components , state…
+Rappel : Avant de commencer react NATIVE, il faut impérativement avoir des bonnes notions en react, càd props , hooks , components , state…
 
 ### Pré-Requis
 
@@ -28,7 +28,7 @@ Se rendre sur le site : [expo](https://docs.expo.io/)
 
 Expo sur desktop :
 
-1. Se rendre sur votre cmd : `npm install -g expo-cli –global`
+1. Se rendre sur votre cmd : `npm install -g expo-cli`
 
 2. Une fois l'installation expo fini, se rendre dans le directory de votre projet à l'aide du terminal : `expo init nom-projet`
 
@@ -337,7 +337,7 @@ const Listing = ({ people }) => {
   return (
     <View>
       <ScrollView>
-        // On accede à chaque element de notre list à l'aide de map
+        // On accède à chaque element de notre liste à l'aide de map
         {people.map((item, index) => {
           return (
             <View key={item.id}>
@@ -360,9 +360,9 @@ const styles = StyleSheet.create({
 export default Listing;
 ```
 
-exercice final : Il faut crée une list et faire en sort de pouvoir supprimer les elements de cet liste un à un..
+exercice final : Il faut créer une list et faire en sorte de pouvoir supprimer les elements de cet liste un à un..
 
-Resultat : 
+Résultat : 
 
 ![exercice3](img/exercice3.png)
 
